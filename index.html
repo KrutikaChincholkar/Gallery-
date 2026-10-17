@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#21160f" />
+  <title>Still — Visual Gallery</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">s.</span><span>still<span class="brand-dot">.</span></span></div>
+      <div class="side-label">YOUR SPACE</div>
+      <button class="nav-item active"><span class="nav-icon">▦</span> Gallery <span class="nav-count">12</span></button>
+      <button class="nav-item"><span class="nav-icon">♡</span> Favourites</button>
+      <button class="nav-item"><span class="nav-icon">◷</span> Recently viewed</button>
+      <div class="side-divider"></div>
+      <div class="side-label">COLLECTIONS</div>
+      <button class="collection"><i class="dot dot-caramel"></i> Coffee moments <span>04</span></button>
+      <button class="collection"><i class="dot dot-blue"></i> Spaces & places <span>03</span></button>
+      <button class="collection"><i class="dot dot-lilac"></i> Little wonders <span>05</span></button>
+      <div class="sidebar-bottom">
+        <div class="avatar-small">K</div>
+        <div><strong>Your workspace</strong><small>Personal collection</small></div>
+        <span class="more">···</span>
+      </div>
+    </aside>
+
+    <section class="main-area">
+      <header class="topbar">
+        <div class="breadcrumb">Workspace <span>/</span> <strong>Gallery</strong></div>
+        <div class="top-actions">
+          <button class="icon-btn" aria-label="Search" id="searchBtn">⌕</button>
+          <button class="icon-btn" aria-label="Grid view" id="gridBtn">▦</button>
+          <button class="share-btn" id="shareBtn">↗ <span>Share gallery</span></button>
+          <div class="avatar">K</div>
+        </div>
+      </header>
+
+      <div class="content">
+        <section class="intro">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-line"></span> A LITTLE INSPIRATION</div>
+            <h1>Collect moments.<br><em>Keep the feeling.</em></h1>
+            <p>A visual diary of things worth slowing down for.</p>
+          </div>
+          <div class="intro-meta"><span class="live-dot"></span> <span id="imageCount">12 moments</span><span class="meta-divider">·</span> Curated by you</div>
+        </section>
+
+        <section class="gallery-stage" id="galleryStage" aria-label="Featured photo gallery">
+          <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+          <div class="stage-top"><span class="stage-kicker">FEATURED COLLECTION</span><span class="stage-index" id="stageIndex">01 <i>/</i> 12</span></div>
+          <div class="photo-stack" id="photoStack">
+            <button class="photo-card card-back card-back-left" data-offset="-2" aria-label="Previous photo"></button>
+            <button class="photo-card card-back card-back-midleft" data-offset="-1" aria-label="Previous photo"></button>
+            <button class="photo-card card-back card-back-right" data-offset="2" aria-label="Next photo"></button>
+            <button class="photo-card card-back card-back-midright" data-offset="1" aria-label="Next photo"></button>
+            <button class="photo-card main-photo" id="mainPhoto" aria-label="Open featured photo">
+              <img id="mainImage" alt="Featured moment" />
+              <span class="photo-shine"></span>
+              <span class="photo-caption"><span id="photoCategory">SLOW LIVING</span><strong id="photoTitle">A little coffee ritual</strong></span>
+              <span class="open-photo">↗</span>
+            </button>
+          </div>
+          <div class="stage-bottom">
+            <button class="round-arrow" id="prevBtn" aria-label="Previous image">←</button>
+            <div class="slider-wrap">
+              <div class="slider-labels"><span id="currentTitle">A little coffee ritual</span><span id="slideCounter">01 / 12</span></div>
+              <div class="slider-track" id="sliderTrack" role="slider" aria-label="Choose gallery image" tabindex="0" aria-valuemin="1" aria-valuemax="12" aria-valuenow="1">
+                <div class="slider-progress" id="sliderProgress"></div>
+                <div class="slider-thumb" id="sliderThumb"></div>
+              </div>
+            </div>
+            <button class="round-arrow" id="nextBtn" aria-label="Next image">→</button>
+          </div>
+          <div class="stage-hint"><span class="hint-key">←</span><span class="hint-key">→</span> use arrow keys to explore</div>
+        </section>
+
+        <section class="below-gallery">
+          <div class="section-heading"><div><span class="eyebrow">YOUR VISUAL DIARY</span><h2>Explore the collection</h2></div><button class="text-button" id="viewAllBtn">View all <span>↗</span></button></div>
+          <div class="thumbnail-row" id="thumbnailRow"></div>
+        </section>
+        <footer><span>Made for moments that matter.</span><span>STILL STUDIO <i>©</i> 2026</span></footer>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="closeLightbox" aria-label="Close">×</button>
+    <button class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="Previous">←</button>
+    <figure><img id="lightboxImage" alt="" /><figcaption><span id="lightboxCategory"></span><strong id="lightboxTitle"></strong></figcaption></figure>
+    <button class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="Next">→</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
